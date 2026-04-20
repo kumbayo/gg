@@ -425,7 +425,7 @@ impl Mutation for MoveRef {
                         tx,
                         format!(
                             "point {:?} to commit {}",
-                            &bookmark_name_ref,
+                            &bookmark_name_ref.as_str(),
                             commit.id().hex()
                         ),
                     )
