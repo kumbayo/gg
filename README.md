@@ -47,3 +47,23 @@ There's no roadmap as such, but items on [the to-do list](doc/TODO.md) may or ma
 GG is lightly maintained and may have bugs. In theory, it can't corrupt a repository thanks to the operation log, but it never hurts to make backups. 
 
 If your repo is "too large" some features will be disabled for performance. See [the default config](src/config/gg.toml) for details.
+
+### Running using X11 instead of Wayland
+When `gg gui` is running under Wayland, you might observe some of the following problems
+- Right click popup menus are not placed at the point where you clicked but the center of the application
+- The windows minimize, maximize and close buttons cannot be clicked until you maximize the window by double-clicking the title bar
+- The windows size is incorrect on start
+- The applications icon is a white W in a yellow circle instead of the official gg icon
+
+All this problems can be workarounded by starting the application with the X11 backend
+```
+export GDK_BACKEND=x11
+gg
+```
+
+If you are starting `gg` using `cargo tauri dev`,  
+you can modify `.cargo/config.toml` to set the necessary environment variable
+```
+[env]
+GDK_BACKEND = "x11"
+```
