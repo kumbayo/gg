@@ -44,6 +44,6 @@ More detail is available in [the changelog](CHANGELOG.md).
 There's no roadmap as such, but items on [the to-do list](doc/TODO.md) may or may not be implemented in future.
 
 ### Known Issues
-GG is lightly maintained and may have bugs. In theory it can't corrupt a repository thanks to the operation log, but it never hurts to make backups. 
+GG is lightly maintained and may have bugs. In theory, it can't corrupt a repository thanks to the operation log, but it never hurts to make backups. 
 
 If your repo is "too large" some features will be disabled for performance. See [the default config](src/config/gg.toml) for details.
