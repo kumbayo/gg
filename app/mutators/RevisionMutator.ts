@@ -65,7 +65,7 @@ export default class RevisionMutator {
                 this.onBookmark();
                 break;
             default:
-                console.log(`unimplemented mutation '${event}'`, this);
+                console.log(`unimplemented Revision mutation '${event}'`, this);
         }
     }
 

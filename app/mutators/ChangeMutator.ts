@@ -44,7 +44,7 @@ export default class ChangeMutator {
                 this.onRestore();
                 break;
             default:
-                console.log(`unimplemented mutation '${event}'`, this);
+                console.log(`unimplemented Change mutation '${event}'`, this);
         }
     }
 

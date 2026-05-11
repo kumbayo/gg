@@ -57,7 +57,7 @@ export default class RefMutator {
                 break;
 
             default:
-                console.log(`unimplemented mutation '${event}'`, this);
+                console.log(`unimplemented Ref mutation '${event}'`, this);
         }
     }
 

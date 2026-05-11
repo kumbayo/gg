@@ -24,7 +24,7 @@ export default class WorkspaceMutator {
                 break;
 
             default:
-                console.log(`unimplemented mutation '${event}'`, this);
+                console.log(`unimplemented Workspace mutation '${event}'`, this);
         }
     }
 
