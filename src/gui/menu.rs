@@ -604,9 +604,9 @@ pub fn handle_menu_event(window: &Window, event: MenuEvent) -> Result<()> {
     log::debug!("handling menu event {event:?}");
 
     // we use a shared menu due to cleanup issues
-    if !window.is_focused()? {
+    /*if !window.is_focused()? {
         return Ok(());
-    }
+    }*/
 
     let target = EventTarget::window(window.label());
     match event.id.0.as_str() {
