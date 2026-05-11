@@ -11,7 +11,7 @@
 </script>
 
 <span class="id" class:pronoun={pronoun || $currentTarget?.type == "Repository"} class:selectable>
-    <span class="prefix {category}">{id.prefix}</span>{suffix}{#if id.type == "ChangeId" && id.offset}<span
+    <span class="prefix {category}">{id.prefix}</span>{suffix}{#if id.type == "ChangeId" && id.offset != null}<span
             class="suffix {category}">/{id.offset}</span
         >{/if}
 </span>
