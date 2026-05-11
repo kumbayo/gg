@@ -1,2 +1,5 @@
 [alias]
 gen = "test -F ts-rs"
+
+[env]
+GDK_BACKEND = "x11"
