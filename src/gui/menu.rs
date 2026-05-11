@@ -600,8 +600,8 @@ pub fn handle_context(window: Window, ctx: Operand, ignore_immutable: bool) -> R
     Ok(())
 }
 
-pub fn handle_event(window: &Window, event: MenuEvent) -> Result<()> {
-    log::debug!("handling event {event:?}");
+pub fn handle_menu_event(window: &Window, event: MenuEvent) -> Result<()> {
+    log::debug!("handling menu event {event:?}");
 
     // we use a shared menu due to cleanup issues
     if !window.is_focused()? {

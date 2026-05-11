@@ -888,7 +888,7 @@ pub fn try_create_window(app_handle: &AppHandle, workspace: Option<PathBuf>) -> 
     });
 
     // menu selection events
-    window.on_menu_event(|w, e| handler::fatal!(menu::handle_event(w, e)));
+    window.on_menu_event(|w, e| handler::fatal!(menu::handle_menu_event(w, e)));
 
     // menu enablement events
     let windows = app_state.windows.clone();
