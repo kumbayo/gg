@@ -305,7 +305,7 @@ fn build_aliases_map(stacked_config: &StackedConfig) -> Result<RevsetAliasesMap>
             let r = item
                 .as_str()
                 .ok_or_else(|| format!("Expected a string, but is {}", item.type_name()))
-                .and_then(|v| aliases_map.insert(decl, v).map_err(|e| e.to_string()));
+                .and_then(|v| aliases_map.insert(decl, v, None).map_err(|e| e.to_string()));
             if let Err(s) = r {
                 return Err(anyhow!("Failed to load `{table_name}.{decl}`: {s}"));
             }
@@ -336,7 +336,7 @@ pub fn build_fileset_aliases_map(stacked_config: &StackedConfig) -> Result<Files
             let r = item
                 .as_str()
                 .ok_or_else(|| format!("Expected a string, but is {}", item.type_name()))
-                .and_then(|v| aliases_map.insert(decl, v).map_err(|e| e.to_string()));
+                .and_then(|v| aliases_map.insert(decl, v, None).map_err(|e| e.to_string()));
             if let Err(s) = r {
                 return Err(anyhow!("Failed to load `{table_name}.{decl}`: {s}"));
             }
