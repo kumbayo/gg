@@ -1,8 +1,10 @@
 use std::sync::Arc;
 
+use super::{precondition, read_file_content};
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;
 use itertools::Itertools;
+use jj_lib::revset::RevsetExpression;
 use jj_lib::{
     backend::{CommitId, CopyId, FileId, TreeValue},
     commit::{Commit, conflict_label_for_commits},
@@ -15,8 +17,6 @@ use jj_lib::{
     repo_path::RepoPath,
     rewrite::{self, RebaseOptions, RebasedCommit},
 };
-
-use super::{precondition, read_file_content};
 
 pub use crate::{
     messages::{
@@ -108,6 +108,7 @@ impl Mutation for MoveChanges {
             let mut rebase_map = std::collections::HashMap::new();
             tx.repo_mut()
                 .rebase_descendants_with_options(
+                    &RevsetExpression::none(),
                     &RebaseOptions::default(),
                     |old_commit, rebased_commit| {
                         rebase_map.insert(
@@ -389,6 +390,7 @@ impl Mutation for MoveHunk {
                 let mut rebase_map = std::collections::HashMap::new();
                 tx.repo_mut()
                     .rebase_descendants_with_options(
+                        &RevsetExpression::none(),
                         &RebaseOptions::default(),
                         |old_commit, rebased_commit| {
                             rebase_map.insert(
