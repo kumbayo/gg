@@ -846,7 +846,8 @@ async fn clone_workspace_checks_out_file_content() -> Result<()> {
     // Create a file with content in the source repo
     let mut test_content = String::from("Hello from test repository!");
     test_content += EOL;
-    test_content += "Line 2\r\n";
+    test_content += "Line 2";
+    test_content += EOL;
     std::fs::write(source_dir.path().join("test_file.txt"), &test_content)?;
 
     // Use git commands to add and commit the file
