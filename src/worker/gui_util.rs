@@ -1237,7 +1237,7 @@ impl WorkspaceData {
             fileset_aliases_map: &self.fileset_aliases_map,
             extensions: &self.extensions,
             workspace: Some(workspace_context),
-            use_glob_by_default: false,
+            use_glob_by_default: true,
         }
     }
 

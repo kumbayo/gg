@@ -1082,7 +1082,7 @@ mod tests {
         .await?;
         assert_matches!(result, MutationResult::Updated { .. });
 
-        let page = queries::query_log(&ws, "description(unsynced)", 3)?;
+        let page = queries::query_log(&ws, "description(\"*unsynced*\")", 3)?;
         assert_eq!(2, page.rows.len());
 
         Ok(())
